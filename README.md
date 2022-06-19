@@ -1,5 +1,5 @@
 # overflow-ellipsis
-> 一个自定义超出宽高部分省略符号的组件
+> 一个自定义超出宽高部分省略符号的组件, 可自行复制 src/component/overflow-ellipsis.vue灵活使用
 
 ## 基础用法
 ```html
@@ -54,7 +54,7 @@ export default defineComponent({
 | className | 包裹块类名, 决定列表的排列方式 | string | - | - |
 # 插槽
 ### content
-用语渲染列表项
+用于渲染列表项
 
 ```html
 <template #content="{ data }">
@@ -62,7 +62,9 @@ export default defineComponent({
 </template>
 ```
 ### ellipsis
+
 用于渲染自定义省略号
+
 ---
 
 | 插槽属性 | 说明 | 类型 | 可选值 | 默认值
