@@ -1,5 +1,6 @@
 <template>
   <div class="overflow-ellipsis"
+    ref="overflowEllipsis"
     :style="{ width: `${width}px`, height: `${height}px`}"
     :class="className"
   >
@@ -43,9 +44,10 @@ export default defineComponent({
     const isFolded = ref(true);
     const foldedNum = ref(0);
     const foldedList = ref<any[]>([]);
-
+    
+    const overflowEllipsis = ref();
     const handleOverFlow = () => {
-      const dom = document.querySelector('.overflow-ellipsis');
+      const dom = overflowEllipsis.value;
       if (dom) {
         const ellipsisLen = dom.lastElementChild?.clientWidth;
         const ellipsisHeight = dom.lastElementChild?.clientHeight;
@@ -96,7 +98,8 @@ export default defineComponent({
       listData,
       foldedNum,
       foldedList,
-      handleClick
+      handleClick,
+      overflowEllipsis
     }
   }
 });
